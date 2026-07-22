@@ -1,12 +1,12 @@
 name: Playwright Tests
 
 on:
-  repository_dispatch: types: [django-updated]
   push:
     branches: [main]
   pull_request:
     branches: [main]
   workflow_dispatch:        # adds a manual "Run workflow" button in the UI
+  repository_dispatch: types: [django-updated]
 
 jobs:
   test:
