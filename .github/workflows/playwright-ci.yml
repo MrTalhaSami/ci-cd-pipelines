@@ -1,6 +1,7 @@
 name: Playwright Tests
 
 on:
+  repository_dispatch: types: [django-updated]
   push:
     branches: [main]
   pull_request:
