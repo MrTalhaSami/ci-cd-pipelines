@@ -18,6 +18,6 @@ export default defineConfig({
     video: 'retain-on-failure',
   },
   projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] , headless:false } },
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
   ],
 });
