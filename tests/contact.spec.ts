@@ -8,11 +8,12 @@
 
    test("verfiy contact submission", async({ page}) =>{
     await page.goto('/form');
-    await page.getByRole('link', { name: 'Contact', exact: true }).click();
     await page.locator("#contact-name").fill('talha malik');
     await page.locator("#contact-email").fill('mrtalhsami19@gmail.com');
-    await page.locator("#contact-message").fill('Test Case 1');
-    await page.locator("(//button[normalize-space()='Send Message'])[1]").click();
-    await expect(page.getByRole('heading', { name: 'Message Sent!' })).toBeVisible();
-    await page.screenshot({path:'test-results/screenshot.png', fullPage:true});
+    await page.locator("#contact-message").fill('Test Case 1',);
+    await page.waitForLoadState('load');
+    await page.getByRole('button', { name: 'Send Message', exact: true }).click();
+    await expect(page.getByText('Thank You for Submitting!', )).toBeVisible();
+    
    }); 
+
